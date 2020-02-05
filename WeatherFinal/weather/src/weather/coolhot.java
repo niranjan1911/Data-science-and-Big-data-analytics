@@ -72,7 +72,8 @@ public static class ReduceForWordCount extends Reducer<Text, IntWritable, Text, 
 
 {
 	int sum = 0,count=0,max = -999,min = 999;
-	Text tempmin,tempmax;
+	Text tempmin = new Text();
+	Text tempmax = new Text();
 	public void reduce(Text word, Iterable<IntWritable> values, Context con) throws IOException, InterruptedException
 	
 	{
@@ -95,6 +96,7 @@ public static class ReduceForWordCount extends Reducer<Text, IntWritable, Text, 
 		   min = avg;
 		   tempmin.set(word);
 	   }
+	   sum  = 0;
 	   //con.write(word, new IntWritable(avg));
 	}
 	//cleanup
