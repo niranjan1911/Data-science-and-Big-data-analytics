@@ -1,0 +1,39 @@
+hduser@DBMSLAB-A3-305-21:/usr/local/hbase$ start-all.sh
+	This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+	20/02/05 14:43:45 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	Starting namenodes on [localhost]
+	localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-DBMSLAB-A3-305-21.out
+	localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-DBMSLAB-A3-305-21.out
+	Starting secondary namenodes [0.0.0.0]
+	0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hduser-secondarynamenode-DBMSLAB-A3-305-21.out
+	20/02/05 14:44:00 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	starting yarn daemons
+	starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hduser-resourcemanager-DBMSLAB-A3-305-21.out
+	localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hduser-nodemanager-DBMSLAB-A3-305-21.out
+hduser@DBMSLAB-A3-305-21:/usr/local/hbase$ jps
+	23655 NameNode
+	24520 NodeManager
+	24761 Jps
+	24027 SecondaryNameNode
+	2540 org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar
+	24204 ResourceManager
+	23821 DataNode
+hduser@DBMSLAB-A3-305-21:/usr/local/hbase$ start-hbase.sh
+	localhost: starting zookeeper, logging to /usr/local/hbase/bin/../logs/hbase-hduser-zookeeper-DBMSLAB-A3-305-21.out
+	starting master, logging to /usr/local/hbase/logs/hbase-hduser-master-DBMSLAB-A3-305-21.out
+	OpenJDK 64-Bit Server VM warning: ignoring option PermSize=128m; support was removed in 8.0
+	OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+	starting regionserver, logging to /usr/local/hbase/logs/hbase-hduser-1-regionserver-DBMSLAB-A3-305-21.out
+hduser@DBMSLAB-A3-305-21:/usr/local/hbase$ hbase shell
+	2020-02-05 14:44:44,446 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	SLF4J: Class path contains multiple SLF4J bindings.
+	SLF4J: Found binding in [jar:file:/usr/local/hbase/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: Found binding in [jar:file:/usr/local/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+	SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+	HBase Shell; enter 'help<RETURN>' for list of supported commands.
+	Type "exit<RETURN>" to leave the HBase Shell
+	Version 1.2.6, rUnknown, Mon May 29 02:25:32 CDT 2017
+
+hbase(main):001:0> 
+
