@@ -1,0 +1,120 @@
+hduser@DBMSLAB-A3-305-21:~/33356/5$ python3
+Python 3.5.2 (default, Oct  8 2019, 13:06:37) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> ab = pd.read_csv("dataset.csv",sep=";")
+>>> ab
+  name,roll,mark
+0       abc,1,99
+1       sss,2,88
+2       ddd,3,66
+3       fdu,4,88
+4       bbd,5,99
+5      hdcb,6,94
+6      fggd,7,10
+7     fuifh,8,47
+8     fhdfh,9,77
+9    fdbfh,10,88
+>>> ab = pd.read_csv("dataset.csv",sep=";",index-col="0")
+  File "<stdin>", line 1
+SyntaxError: keyword can't be an expression
+>>> ab = pd.read_csv("dataset.csv",sep=";",index_col=0)
+>>> ab
+Empty DataFrame
+Columns: []
+Index: [abc,1,99, sss,2,88, ddd,3,66, fdu,4,88, bbd,5,99, hdcb,6,94, fggd,7,10, fuifh,8,47, fhdfh,9,77, fdbfh,10,88]
+>>> ab = pd.read_csv("dataset.csv",sep=",",index_col=0)
+>>> ab
+       roll  mark
+name             
+abc       1    99
+sss       2    88
+ddd       3    66
+fdu       4    88
+bbd       5    99
+hdcb      6    94
+fggd      7    10
+fuifh     8    47
+fhdfh     9    77
+fdbfh    10    88
+>>> s = pd.sort(key="name")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'pandas' has no attribute 'sort'
+>>> s = pd.sort_values("name",ascending=true)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'pandas' has no attribute 'sort_values'
+>>> ab.sort_values("name",ascending=true)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'true' is not defined
+>>> ab.sort_values("name",ascending=True)
+       roll  mark
+name             
+abc       1    99
+bbd       5    99
+ddd       3    66
+fdbfh    10    88
+fdu       4    88
+fggd      7    10
+fhdfh     9    77
+fuifh     8    47
+hdcb      6    94
+sss       2    88
+>>> ab.sort_values("name",ascending=False)
+       roll  mark
+name             
+sss       2    88
+hdcb      6    94
+fuifh     8    47
+fhdfh     9    77
+fggd      7    10
+fdu       4    88
+fdbfh    10    88
+ddd       3    66
+bbd       5    99
+abc       1    99
+>>> ab = pd.read_csv("dataset.csv",sep=",",index_col=0)
+>>> ab
+       roll  mark
+name             
+abc     NaN  99.0
+sss     2.0  88.0
+ddd     3.0  66.0
+fdu     4.0  88.0
+bbd     5.0   NaN
+hdcb    6.0  94.0
+fggd    NaN  10.0
+fuifh   8.0  47.0
+fhdfh   9.0  77.0
+fdbfh  10.0  88.0
+>>> ab.sort_values("name",ascending=False)
+       roll  mark
+name             
+sss     2.0  88.0
+hdcb    6.0  94.0
+fuifh   8.0  47.0
+fhdfh   9.0  77.0
+fggd    NaN  10.0
+fdu     4.0  88.0
+fdbfh  10.0  88.0
+ddd     3.0  66.0
+bbd     5.0   NaN
+abc     NaN  99.0
+>>> ab.sort_values("roll",ascending=False)
+       roll  mark
+name             
+fdbfh  10.0  88.0
+fhdfh   9.0  77.0
+fuifh   8.0  47.0
+hdcb    6.0  94.0
+bbd     5.0   NaN
+fdu     4.0  88.0
+ddd     3.0  66.0
+sss     2.0  88.0
+abc     NaN  99.0
+fggd    NaN  10.0
+>>> 
+
