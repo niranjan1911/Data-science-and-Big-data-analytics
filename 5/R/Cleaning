@@ -1,0 +1,2 @@
+//seperation of two columns using r on Dataset.csv
+a <- separate(mydata,status_published,c("left", "right")," ")
